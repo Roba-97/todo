@@ -1,0 +1,102 @@
+/*todo作成成功、失敗時のメッセージ*/
+.message-success {
+    padding: 10px 20px;
+    background-color: #d1e7dd;
+    border: 1px solid #badbcc;
+}
+
+.message-success__text {
+    color: #0f5132;
+    font-weight: bold;
+}
+
+.message-error {
+    margin-top: 0;
+    background-color: #f8d7da;
+    border: 1px solid #f5c2c7;
+}
+
+.message-error__text {
+    padding: 10px 0px 10px 10px;
+    color: #842029;
+    font-weight: bold;
+}
+ 
+.todo-container{
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.making-form, .todo-view {
+    margin: 45px auto;
+    width: 70%;
+}
+
+.making-form  {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__input-text input {
+    height: 40px;
+    width: 480px;
+}
+
+.form__button {
+    margin: 0px 15px;
+}
+.form__button-making {
+    height: 40px;
+    width: 140px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+}
+
+/*todo-viewに関する部分*/
+.todo-view__group {
+    padding: 15px 0;
+    border-bottom: 1px solid #000;
+    display: flex;
+}
+
+.todo-view__update {
+    width: calc(100% - 60px);
+}
+
+.todo-view__update form{
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-view__text, .todo-view__heading {
+    height: 40px;
+    width: 480px;
+    line-height: 40px; 
+}
+.todo-view__heading span {
+    font-weight: bold;
+}
+.todo-view__text {
+    border: none;
+    outline: none;
+}
+
+/*更新・削除ボタンに関する部分*/
+.todo-view__btn {
+    height: 40px;
+    width: 60px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+}
+.todo-view__btn--update {
+    margin-left: 0;
+    background: #0000ff;
+}
+.todo-view__btn--delete {
+    margin: 0px 15px;
+    background: #ff0000;
+}
