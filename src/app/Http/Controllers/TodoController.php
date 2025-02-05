@@ -9,7 +9,9 @@ class TodoController extends Controller
 {
     public function index()
     {
-       $todos = Todo::All(); 
+        //  マジックメソッド __call
+       // $todos = Todo::All();
+       $todos = Todo::all(); 
        return view('index', ['todos' => $todos]);
     }
 
@@ -17,20 +19,23 @@ class TodoController extends Controller
     {
         $todo = $request->only(['content']);
         Todo::create($todo);
+        // Todo::create($request->only(['content']));
         return redirect('/')->with('message', 'Todoを作成しました');
     }
 
-    public function update(Request $request)
+    public function update(Request $request, Todo $todo)
     {
-        $todo = $request->all();
-        unset($todo['_token']);
-        Todo::find($request->id)->update($todo);
-        return redirect('/');
+        // $todo = $request->all();
+
+        // unset($todo['_token']);
+        $todo->update($request->all());
+        return redirect('/')->with('message', 'Todoを更新しました');;
     }
 
     public function destroy(Request $request)
     {
+        // findOrFail
         Todo::find($request->id)->delete();
-        return redirect('/');
+        return redirect('/')->with('message', 'Todoを削除しました');;
     }
 }

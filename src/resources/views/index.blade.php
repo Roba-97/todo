@@ -34,7 +34,7 @@
 			@foreach ($todos as $todo)
 			<div class="todo-view__group">	
 				<div class="todo-view__update">
-					<form action="/todos/update?id={{$todo->id}}" method="post">
+					<form action="/todos/{{$todo->id}}" method="post">
 						@csrf
 						@method('PATCH') 
 						<input class="todo-view__text" type="text" name="content" value="{{ $todo->content }}"></input>

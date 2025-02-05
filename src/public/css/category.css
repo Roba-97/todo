@@ -1,0 +1,99 @@
+.message-success {
+    padding: 10px 20px;
+    background-color: #d1e7dd;
+    border: 1px solid #badbcc;
+}
+
+.message-success__text {
+    color: #0f5132;
+    font-weight: bold;
+}
+
+.message-error {
+    margin-top: 0;
+    background-color: #f8d7da;
+    border: 1px solid #f5c2c7;
+}
+
+.message-error__text {
+    padding: 10px 0px 10px 10px;
+    color: #842029;
+    font-weight: bold;
+}
+
+.category-container{
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.create-category, .view-category{
+    margin: 45px auto;
+    width: 70%;
+}
+
+.create-category__form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__input-text input {
+    height: 40px;
+    width: 480px;
+    outline: none;
+}
+
+.form__button {
+    margin: 0px 15px;
+}
+.form__button-create {
+    height: 40px;
+    width: 140px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+}
+
+.view-category__table {
+    width: 100%;
+}
+
+.view-category__row {
+    height: 60px;
+    border-bottom: 1px solid #000;
+}
+
+.view-category__heading {
+    text-align: left;
+    font-weight: bold;
+}
+
+.view-category__update form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-view__text {
+    border: none;
+    outline: none;
+}
+
+.view-category__delete {
+    width: 90px;
+}
+
+.category-view__btn {
+    height: 32px;
+    width: 60px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+}
+.category-view__btn--update {
+    background: #0000ff;
+}
+.category-view__btn--delete {
+    margin: 0px 15px;
+    background: #ff0000;
+}
