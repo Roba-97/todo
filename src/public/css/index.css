@@ -22,31 +22,38 @@
     font-weight: bold;
 }
  
-.todo-container{
+.todo-container {
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
 }
 
-.making-form, .todo-view {
-    margin: 45px auto;
+.create-container, .search-container, .todo-view {
+    margin: 30px auto;
     width: 70%;
 }
 
-.making-form  {
+.create-form, .search-form {
     display: flex;
-    justify-content: space-between;
 }
 
 .form__input-text input {
     height: 40px;
     width: 480px;
+    outline: none;
+}
+
+.form__select-ctg select {
+    margin: 0px 15px;
+    height: 40px;
+    width: 140px;
+    outline: none;
 }
 
 .form__button {
-    margin: 0px 15px;
+    margin: 0px 15px 0px auto;
 }
-.form__button-making {
+.form__button-create, .form__button-search {
     height: 40px;
     width: 140px;
     border: none;
@@ -71,17 +78,22 @@
     justify-content: space-between;
 }
 
-.todo-view__text, .todo-view__heading {
+.todo-view__todo, .todo-view__heading {
     height: 40px;
-    width: 480px;
+    width: 400px;
     line-height: 40px; 
 }
 .todo-view__heading span {
     font-weight: bold;
 }
-.todo-view__text {
+.todo-view__todo {
     border: none;
     outline: none;
+}
+.todo-view__ctg  {
+    margin-right: auto;
+    height: 40px;
+    line-height: 40px; 
 }
 
 /*更新・削除ボタンに関する部分*/

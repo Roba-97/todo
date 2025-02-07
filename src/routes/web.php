@@ -16,16 +16,12 @@ use App\Http\Controllers\CategoryController;
 */
 
 Route::get('/', [TodoController::class, 'index']);
+Route::get('/todos/search', [TodoController::class, 'search']);
 Route::post('/todos', [TodoController::class, 'store']);
-Route::patch('/todos/{todo}', [TodoController::class, 'update']);
-// パラメータで渡すか　パスで渡すか
-// Route::patch('/todos/update', [TodoController::class, 'update']);
-// put リソース全てを置き換える
-// patch リソース一部を更新 
-// Route::delete('/todos/delete', [TodoController::class, 'destroy']);
-Route::delete('/todos', [TodoController::class, 'destroy']);
-
-// REST設計 RESTfull
+Route::patch('/todos/update', [TodoController::class, 'update']);
+Route::delete('/todos/delete', [TodoController::class, 'destroy']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::post('/categories', [CategoryController::class, 'store']);
+Route::patch('/categories/update', [CategoryController::class, 'update']);
+Route::delete('/categories/delete', [CategoryController::class, 'destroy']);

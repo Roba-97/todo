@@ -10,19 +10,20 @@
 			<span class="message-success__text">{{ session('message') }}</span>
 		</div>
 	@endif
-	@error('content')
+	@if ($errors->any())
 		<ul class="message-error">
-			<li class="message-error__text">{{ $message }}</li>
+			@foreach ($errors->all() as $error)
+			<li class="message-error__text">{{ $error }}</li>
+			@endforeach
 		</ul>
-	@enderror
+	@endif
 	
-
 	<div class="category-container">
 		<div class="create-category">
 			<form class="create-category__form" action="/categories" method="post">
 				@csrf
 				<div class="form__input-text">
-					<input type="text" name="name">         
+					<input type="text" name="name" value="{{ old('name') }}">         
 				</div>
 				<div class="form__button">           
 					<button class="form__button-create" type="submit">作成</button>
@@ -38,18 +39,19 @@
 				@foreach($categories as $category)
 				<tr class="view-category__row">
 					<td class="view-category__update">
-						<form  action="" method="post">
+						<form action="/categories/update" method="post">
 							@csrf
-							@method('PATCH') 
-							<input type="text" name="id" value="{{ $category->id }}" hidden></input>
+							@method('PATCH')
+							<input type="hidden" name="id" value="{{ $category->id }}"></input>
 							<input class="category-view__text" type="text" name="name" value="{{ $category->name }}"></input>
 							<button class="category-view__btn category-view__btn--update" type="submit">更新</button>
 						</form>
 					</td>
 					<td class="view-category__delete">
-						<form action="" method="post">
+						<form action="/categories/delete" method="post">
 							@csrf
-							@method('DELETE') 
+							@method('DELETE')
+							<input type="hidden" name="id" value="{{ $category->id }}"></input>
 							<button class="category-view__btn  category-view__btn--delete" type="submit">削除</button>
 						</form>
 					</td>
