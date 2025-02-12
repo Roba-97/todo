@@ -10,11 +10,13 @@
 		<span class="message-success__text">{{ session('message') }}</span>
 	</div>
 	@endif
-	@error('content')
-	<ul class="message-error">
-		<li class="message-error__text">{{ $message }}</li>
-	</ul>
-	@enderror
+	@if($errors->any())
+		@foreach($errors->all() as $error)
+		<ul class="message-error">
+			<li class="message-error__text">{{ $error }}</li>
+		</ul>
+		@endforeach
+	@endif
 
 	<div class="todo-container">
 
@@ -23,11 +25,10 @@
 			<form class="create-form" action="/todos" method="post">
 				@csrf
 				<div class="form__input-text">
-					<input type="text" name="content">         
+					<input type="text" name="content" value="{{ old('content') }}">         
 				</div>
 				<div class="form__select-ctg">
 					<select name="category_id">
-						<option>カテゴリ</option>
 						@foreach($categories as $category)
 						<option value="{{ $category->id }}">{{ $category->name }}</option>
 						@endforeach
@@ -48,7 +49,6 @@
 				</div>
 				<div class="form__select-ctg">
 					<select name="category_id">
-						<option>カテゴリ</option>
 						@foreach($categories as $category)
 						<option value="{{ $category->id }}">{{ $category->name }}</option>
 						@endforeach

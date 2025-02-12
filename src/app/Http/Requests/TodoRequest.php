@@ -25,6 +25,7 @@ class TodoRequest extends FormRequest
     {
         return [
             'content' => ['required', 'string', 'max:20'],
+            'category_id' => ['required'],
         ];
     }
 
@@ -33,6 +34,7 @@ class TodoRequest extends FormRequest
             'content.required' => 'Todoを入力してください',
             'content.string' => 'Todoを文字列で入力してください',
             'content.max' => 'Todoを20文字以下で入力してください',
+            'category_id.required' => 'カテゴリを選択、あるいは作成してください',
         ];
     }
 }
