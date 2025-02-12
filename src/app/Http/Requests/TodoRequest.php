@@ -23,10 +23,16 @@ class TodoRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'content' => ['required', 'string', 'max:20'],
             'category_id' => ['required'],
         ];
+
+        if ($this->isMethod('patch')) {
+            unset($rules['category_id']);
+        }
+
+        return $rules;
     }
 
     public function messages() {
